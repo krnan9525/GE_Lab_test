@@ -36,6 +36,7 @@ public class electron_action : MonoBehaviour {
 		transform.rotation *= Quaternion.AngleAxis (Time.deltaTime * angular_speed, new Vector3 (0, 1, 0));
 		wander_vector = Quaternion.AngleAxis(Random.Range(-wander_angle,wander_angle), new Vector3(0,1,0)) * wander_vector;
 		wander_vector = Quaternion.AngleAxis(Random.Range(-wander_angle,wander_angle), new Vector3(1,0,0)) * wander_vector;
+		wander_vector = Quaternion.AngleAxis(Random.Range(-wander_angle,wander_angle), new Vector3(0,0,1)) * wander_vector;
 		transform.position += transform.TransformVector (wander_vector);
 
 		current_angle += Time.deltaTime * angular_speed;
