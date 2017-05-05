@@ -5,17 +5,18 @@ using UnityEngine;
 public class boid : MonoBehaviour {
 
 	public Vector3 force;
+	private steering[] behievers;
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		transform.position += force;
+		behievers = GetComponentsInChildren<steering> ();
 	}
 
-	void calculate(){
-		
+	void FixedUpdate () {
+		foreach (steering b in behievers) {
+			transform.position += b.Calculate();
+		}
+
 	}
+
+
 }

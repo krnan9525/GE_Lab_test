@@ -49,6 +49,7 @@
      <Compile Include="Assets\GE_lab.cs" />
      <Compile Include="Assets\boid.cs" />
      <Compile Include="Assets\electron_action.cs" />
+     <Compile Include="Assets\steering.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files/Unity 5.6.0b4/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

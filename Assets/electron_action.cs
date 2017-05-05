@@ -34,17 +34,18 @@ public class electron_action : MonoBehaviour {
 	void Update () {
 		transform.position = new Vector3 (Mathf.Sin (Mathf.Deg2Rad * current_angle), 0, Mathf.Cos (Mathf.Deg2Rad * current_angle)) * radius + central_point;
 		transform.rotation *= Quaternion.AngleAxis (Time.deltaTime * angular_speed, new Vector3 (0, 1, 0));
-		wander_vector = Quaternion.AngleAxis(Random.RandomRange(-wander_angle,wander_angle), new Vector3(0,1,0)) * wander_vector;
-		wander_vector = Quaternion.AngleAxis(Random.RandomRange(-wander_angle,wander_angle), new Vector3(1,0,0)) * wander_vector;
+		wander_vector = Quaternion.AngleAxis(Random.Range(-wander_angle,wander_angle), new Vector3(0,1,0)) * wander_vector;
+		wander_vector = Quaternion.AngleAxis(Random.Range(-wander_angle,wander_angle), new Vector3(1,0,0)) * wander_vector;
 		transform.position += transform.TransformVector (wander_vector);
 
 		current_angle += Time.deltaTime * angular_speed;
 
 	}
 
-	void calculate(){
+	/*public override Vector3 Calculate(){
 		Vector3 past_pos = new Vector3 (Mathf.Sin (Mathf.Deg2Rad * current_angle), 0, Mathf.Cos (Mathf.Deg2Rad * current_angle)) * radius + central_point;
 		current_angle += Time.deltaTime * angular_speed;
-		//force = (new Vector3 (Mathf.Sin (Mathf.Deg2Rad * current_angle), 0, Mathf.Cos (Mathf.Deg2Rad * current_angle)) * radius + central_point) - past_pos;
-	}
+		Vector3 t_force = (new Vector3 (Mathf.Sin (Mathf.Deg2Rad * current_angle), 0, Mathf.Cos (Mathf.Deg2Rad * current_angle)) * radius + central_point) - past_pos;
+		return t_force;
+	}*/
 }
